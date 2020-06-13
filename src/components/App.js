@@ -58,7 +58,7 @@ const App = (props) => {
   }
 
   const getInfo = async () => {
-    const response = await fetch('http://localhost:3000/gifts')
+    const response = await fetch('https://vast-woodland-26414.herokuapp.com/gifts')
     const result = await response.json()
     setRecipients(result);
   }
@@ -68,7 +68,7 @@ const App = (props) => {
   }, []);
 
   const handleCreate =  async (recipient) => {
-    const response = await fetch('http://localhost:3000/gifts', {
+    const response = await fetch('https://vast-woodland-26414.herokuapp.com/gifts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ const App = (props) => {
   }
 
   const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+    const response = await fetch(`https://vast-woodland-26414.herokuapp.com/gifts/${id}`, {
       method: 'DELETE'
     })
     getInfo()
@@ -87,7 +87,7 @@ const App = (props) => {
 
   const handleUpdate = async (data)  => {
     console.log(data)
-    const response = await fetch(`http://localhost:3000/gifts/${data._id}`, {
+    const response = await fetch(`https://vast-woodland-26414.herokuapp.com/gifts/${data._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
